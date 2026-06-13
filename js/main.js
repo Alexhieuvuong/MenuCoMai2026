@@ -51,28 +51,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', highlightSidebar);
 
-    // Click on product card to toggle price
-    const menuItems = document.querySelectorAll('.standard-grid .menu-item');
+    // Toggle a card's price list via its "Xem Món" button (keyboard accessible).
+    const seeMoreButtons = document.querySelectorAll('.standard-grid .see-more-btn');
 
-    menuItems.forEach(item => {
-        // Make the card clickable
+    seeMoreButtons.forEach((button, i) => {
+        const item = button.closest('.menu-item');
+        const priceList = item && item.querySelector('.price-list');
+        if (!priceList) return;
+
+        if (!priceList.id) priceList.id = 'price-list-' + i;
+        button.setAttribute('type', 'button');
+        button.setAttribute('aria-controls', priceList.id);
+        button.setAttribute('aria-expanded', 'false');
+
+        button.addEventListener('click', function () {
+            const open = priceList.style.display === 'block';
+            priceList.style.display = open ? 'none' : 'block';
+            button.textContent = open ? 'Xem Món' : 'Ẩn Món';
+            button.setAttribute('aria-expanded', String(!open));
+        });
+
+        // Flexibility: clicking anywhere on the card (image, title, body) toggles
+        // the price list — delegates to the button so behaviour/ARIA stay in sync.
+        // Skip clicks on the button itself (it handles its own toggle) and clicks
+        // inside the open price list (so reading the list doesn't close it).
         item.style.cursor = 'pointer';
-
         item.addEventListener('click', function (e) {
-            // Find the button and price list within this card
-            const button = this.querySelector('.see-more-btn');
-            const priceList = this.querySelector('.price-list');
-
-            if (button && priceList) {
-                // Toggle visibility
-                if (priceList.style.display === 'block') {
-                    priceList.style.display = 'none';
-                    button.textContent = 'Xem Món';
-                } else {
-                    priceList.style.display = 'block';
-                    button.textContent = 'Ẩn Món';
-                }
-            }
+            if (e.target.closest('.see-more-btn')) return;
+            if (e.target.closest('.price-list')) return;
+            button.click();
         });
     });
 
