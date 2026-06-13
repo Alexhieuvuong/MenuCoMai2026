@@ -727,17 +727,12 @@ footer {
 .price-list {
     display: none;
     margin-top: 1.2rem;
-    padding: 0.4rem 1.2rem;
+    padding: 0.8rem 1.2rem;
     background-color: #f8f9fa;
     border-radius: 12px;
     font-size: 1.25rem;
     color: #636e72;
-    /* Every price list is the same fixed size; longer lists scroll internally
-       so opening any item extends the page by a consistent amount. */
-    max-height: 240px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
+    /* show the whole list (rolls fully open — no internal scroll) */
 }
 
 .price-list .price-item {
