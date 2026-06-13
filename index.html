@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu – Sua Chua Co Mai</title>
 
+    <!-- Always open the page at the very top: disable scroll restoration and
+         strip any leftover #section hash (e.g. #che) before it can jump. -->
+    <script>
+        (function () {
+            if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+            if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+            window.addEventListener('load', function () { window.scrollTo(0, 0); });
+        })();
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +30,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="images/favicon.webp">
 
-    <link rel="stylesheet" href="css/style.css?v=32">
-    <link rel="stylesheet" href="css/micay-banner.css?v=32">
+    <link rel="stylesheet" href="css/style.css?v=33">
+    <link rel="stylesheet" href="css/micay-banner.css?v=33">
 </head>
 
 <body>
@@ -974,8 +984,8 @@
         </div>
     </div>
 
-    <script src="js/main.js?v=32"></script>
-    <script src="js/micay-banner.js?v=32" defer></script>
+    <script src="js/main.js?v=33"></script>
+    <script src="js/micay-banner.js?v=33" defer></script>
 </body>
 
 </html>
