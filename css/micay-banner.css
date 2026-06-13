@@ -1051,3 +1051,6 @@
     height: 1px;
     pointer-events: none;
 }
+
+/* Performance: keep ingredients static — no idle floating/bobbing animation. */
+#best-seller .ing-float { animation: none !important; }

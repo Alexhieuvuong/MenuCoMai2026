@@ -749,6 +749,8 @@ footer {
 .price-list .dish-name {
     font-weight: 500;
     color: #2d3436;
+    white-space: nowrap;
+    /* keep long names like "Caramen Trân Châu Thạch" on a single line */
 }
 
 .price-list .dish-price {
@@ -790,18 +792,28 @@ footer {
 }
 
 .must-try-heart {
-    height: 1.5rem;
-    width: auto;
+    height: 1.6rem;
+    width: 1.6rem;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+}
+
+/* small inline "like" heart next to dish names — square, space-saving */
+.must-try-inline {
+    height: 1.1rem;
+    width: 1.1rem;
+    vertical-align: -0.15em;
+    margin-left: 0.3rem;
 }
 
 @media (max-width: 480px) {
     .must-try-inline {
-        height: 0.75rem;
+        height: 1rem;
+        width: 1rem;
     }
 
     .must-try-heart {
-        height: 1.2rem;
+        height: 1.3rem;
+        width: 1.3rem;
     }
 }
 

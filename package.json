@@ -1,14 +1,14 @@
 {
-  "name": "newmenucomai",
+  "name": "menucomai2026",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "description": "Sữa Chua Cô Mai — mobile-first menu site with an animated Mì Cay scroll banner",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "python3 -m http.server 8765",
+    "convert-images": "node convert_images.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "Alexhieuvuong",
+  "license": "UNLICENSED",
   "dependencies": {
     "sharp": "^0.34.5"
   }

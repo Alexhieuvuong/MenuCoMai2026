@@ -6,3 +6,7 @@ node_modules/
 
 # Logs
 *.log
+
+# Source image originals — only the optimized .webp are served & tracked
+images/*.png
+uploads/*.png
