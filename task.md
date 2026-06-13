@@ -1,0 +1,37 @@
+# Task List: Sua Chua Co Mai
+
+- [x] Analyze target website (suachuacomai.netlify.app) <!-- id: 0 -->
+    - [x] Extract color palette and typography <!-- id: 1 -->
+    - [x] Identify key layout components (Header, Menu Grid, Footer) <!-- id: 2 -->
+    - [x] List necessary assets (images, icons) <!-- id: 3 -->
+- [x] Set up project structure <!-- id: 4 -->
+    - [x] Create directories (`css`, `js`, `images`) <!-- id: 5 -->
+    - [x] Download images from source <!-- id: 15 -->
+    - [x] Create base files (`index.html`, `css/style.css`, `js/main.js`) <!-- id: 6 -->
+- [x] Implement Header <!-- id: 7 -->
+- [x] Implement Menu Section <!-- id: 8 -->
+    - [x] Create menu item card component <!-- id: 9 -->
+    - [x] Implement responsive grid layout <!-- id: 10 -->
+- [x] Implement Footer <!-- id: 11 -->
+- [x] Polish and Verify <!-- id: 12 -->
+    - [x] Check responsiveness <!-- id: 13 -->
+    - [x] Verify against original site <!-- id: 14 -->
+- [x] Refine for Mobile (User Request) <!-- id: 16 -->
+    - [x] Simplify Header (Logo center, Contact right) <!-- id: 17 -->
+    - [x] Remove hover effects <!-- id: 18 -->
+    - [x] Implement Auto-sliding Carousels for Menu Sections <!-- id: 19 -->
+- [x] Polish Mobile Texture (User Request) <!-- id: 20 -->
+    - [x] Refine Typography (Sizes, Weights) <!-- id: 21 -->
+    - [x] Improve Spacing & Touch Targets <!-- id: 22 -->
+    - [x] Polish Sidebar/Tab Navigation <!-- id: 23 -->
+    - [x] Fine-tune Carousel Feel <!-- id: 24 -->
+- [x] Responsive Adaptation (User Request) <!-- id: 25 -->
+    - [x] Implement Fluid Container Widths <!-- id: 26 -->
+    - [x] Use Relative Units for Typography (`clamp`) <!-- id: 27 -->
+    - [x] Ensure Carousel Item Scalability <!-- id: 28 -->
+    - [x] Verify on Multiple Viewports <!-- id: 29 -->
+- [x] Layout & Interactivity Updates (User Request) <!-- id: 30 -->
+    - [x] Adjust Navigation Bar Spacing <!-- id: 31 -->
+    - [x] Rename "Coffees" to "Best Seller" & Keep as Carousel <!-- id: 32 -->
+    - [x] Disable Carousel for Other Sections (Revert to Grid) <!-- id: 33 -->
+    - [x] Implement "See More" Button & Ingredient List (Non-Carousel Items) <!-- id: 34 -->

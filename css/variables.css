@@ -1,0 +1,88 @@
+:root {
+    /* Colors */
+    --army-green: #4c5b29;
+    --army-green-l-1: #5e6c3f;
+    --army-green-l-2: #707c54;
+    --army-green-l-3: #949d7f;
+    --army-green-l-4: #b8beaa;
+    --army-green-l-5: #dcdfd5;
+    --army-green-l-6: #eeefea;
+    --army-green-d-1: #455225;
+    --army-green-d-2: #3d4921;
+    --army-green-d-3: #2e3719;
+    --army-green-d-4: #1f2511;
+    --army-green-d-5: #101309;
+    --army-green-d-6: #080a05;
+
+    --red: #b92727;
+    --red-l-1: #c03d3d;
+    --red-l-2: #c75353;
+    --red-l-3: #d57e7e;
+    --red-l-4: #e3a9a9;
+    --red-l-5: #f1d4d4;
+    --red-l-6: #f8eaea;
+    --red-d-1: #a72424;
+    --red-d-2: #942020;
+    --red-d-3: #6f1818;
+    --red-d-4: #4a1010;
+    --red-d-5: #250808;
+    --red-d-6: #130404;
+
+    --greyscale: #0a0a0a;
+    --greyscale-l-1: #232323;
+    --greyscale-l-2: #3b3b3b;
+    --greyscale-l-3: #6c6c6c;
+    --greyscale-l-4: #9d9d9d;
+    --greyscale-l-5: #cecece;
+    --greyscale-l-6: #e7e7e7;
+    --greyscale-d-1: #090909;
+    --greyscale-d-2: #080808;
+    --greyscale-d-3: #060606;
+    --greyscale-d-4: #040404;
+    --greyscale-d-5: #020202;
+    --greyscale-d-6: #010101;
+
+    --tofu: #e9e4d6;
+    --tofu-l-1: #ece7db;
+    --tofu-l-2: #eeeadf;
+    --tofu-l-3: #f2efe7;
+    --tofu-l-4: #f7f5ef;
+    --tofu-l-5: #fbfaf7;
+    --tofu-l-6: #fdfdfb;
+    --tofu-d-1: #d2cec1;
+    --tofu-d-2: #bbb7ac;
+    --tofu-d-3: #8c8981;
+    --tofu-d-4: #5e5c56;
+    --tofu-d-5: #2f2e2b;
+    --tofu-d-6: #181716;
+
+    --beige: #dbc9a6;
+    --beige-l-1: #dfcfaf;
+    --beige-l-2: #e3d4b8;
+    --beige-l-3: #eadfca;
+    --beige-l-4: #f1eadc;
+    --beige-l-5: #f8f5ee;
+    --beige-l-6: #fcfaf7;
+    --beige-d-1: #c6b596;
+    --beige-d-2: #b0a185;
+    --beige-d-3: #847964;
+    --beige-d-4: #585143;
+    --beige-d-5: #2c2922;
+    --beige-d-6: #161511;
+
+    /* Spacing */
+    --gap-3xs: clamp(0.5rem, 0.5rem + 0vw, 0.5rem);
+    --gap-2xs: clamp(0.9rem, 0.871rem + 0.0806vw, 1rem);
+    --gap-xs: clamp(1.4rem, 1.371rem + 0.0806vw, 1.5rem);
+    --gap-s: clamp(1.8rem, 1.7419rem + 0.1613vw, 2rem);
+    --gap-m: clamp(2.7rem, 2.6129rem + 0.2419vw, 3rem);
+    --gap-l: clamp(3.6rem, 3.4839rem + 0.3226vw, 4rem);
+    --gap-xl: clamp(5.4rem, 5.2258rem + 0.4839vw, 6rem);
+    --gap-2xl: clamp(7.2rem, 6.9677rem + 0.6452vw, 8rem);
+    --gap-3xl: clamp(10.8rem, 10.4516rem + 0.9677vw, 12rem);
+    
+    /* Fonts */
+    --font-body: "IBM Plex Mono", monospace;
+    --font-heading: "Montserrat", sans-serif; /* Fallback for Beau Lulo Clean */
+    --font-typewriter: "Courier Prime", monospace; /* Fallback for Nitti Typewriter */
+}
