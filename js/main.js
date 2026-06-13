@@ -51,35 +51,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', highlightSidebar);
 
-    // Toggle a card's price list via its "Xem Món" button (keyboard accessible).
-    const seeMoreButtons = document.querySelectorAll('.standard-grid .see-more-btn');
-
-    seeMoreButtons.forEach((button, i) => {
-        const item = button.closest('.menu-item');
-        const priceList = item && item.querySelector('.price-list');
+    // Roll down a card's price list inline. Keyboard-accessible via the button,
+    // and clicking anywhere on the card also toggles it.
+    document.querySelectorAll('.standard-grid .menu-item').forEach((item, i) => {
+        const button = item.querySelector('.see-more-btn');
+        const priceList = item.querySelector('.price-list');
         if (!priceList) return;
 
         if (!priceList.id) priceList.id = 'price-list-' + i;
-        button.setAttribute('type', 'button');
-        button.setAttribute('aria-controls', priceList.id);
-        button.setAttribute('aria-expanded', 'false');
-
-        button.addEventListener('click', function () {
+        const toggle = () => {
             const open = priceList.style.display === 'block';
             priceList.style.display = open ? 'none' : 'block';
-            button.textContent = open ? 'Xem Món' : 'Ẩn Món';
-            button.setAttribute('aria-expanded', String(!open));
-        });
+            if (button) {
+                button.textContent = open ? 'Xem Món' : 'Ẩn Món';
+                button.setAttribute('aria-expanded', String(!open));
+            }
+        };
 
-        // Flexibility: clicking anywhere on the card (image, title, body) toggles
-        // the price list — delegates to the button so behaviour/ARIA stay in sync.
-        // Skip clicks on the button itself (it handles its own toggle) and clicks
-        // inside the open price list (so reading the list doesn't close it).
+        if (button) {
+            button.setAttribute('type', 'button');
+            button.setAttribute('aria-controls', priceList.id);
+            button.setAttribute('aria-expanded', 'false');
+            button.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
+        }
+        // Flexibility: clicking anywhere on the card toggles it; clicks inside the
+        // open list don't close it.
         item.style.cursor = 'pointer';
-        item.addEventListener('click', function (e) {
+        item.addEventListener('click', (e) => {
             if (e.target.closest('.see-more-btn')) return;
             if (e.target.closest('.price-list')) return;
-            button.click();
+            toggle();
         });
     });
 

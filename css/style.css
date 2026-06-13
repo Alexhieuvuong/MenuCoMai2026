@@ -726,11 +726,11 @@ footer {
 
 .price-list {
     display: none;
-    margin-top: 1.5rem;
-    padding: 1.5rem;
+    margin-top: 1.2rem;
+    padding: 1.2rem;
     background-color: #f8f9fa;
     border-radius: 12px;
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     color: #636e72;
 }
 
@@ -738,7 +738,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 0.8rem 0;
+    padding: 0.6rem 0;
     border-bottom: 1px solid #e9ecef;
 }
 
@@ -1218,4 +1218,13 @@ body.nav-hidden .sidebar {
         white-space: nowrap;
         padding: 0.3rem 0;
     }
+}
+
+
+/* iOS: prevent double-tap-to-zoom on the tappable menu cards / buttons so
+   opening a price list doesn't zoom the page in. */
+.standard-grid .menu-item,
+.see-more-btn,
+.sidebar-menu a {
+    touch-action: manipulation;
 }
