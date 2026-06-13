@@ -732,6 +732,7 @@ footer {
     border-radius: 12px;
     font-size: 1.25rem;
     color: #636e72;
+    text-align: left;   /* override the card's centered text */
     /* show the whole list (rolls fully open — no internal scroll) */
 }
 
