@@ -186,3 +186,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, { passive: true });
 })();
+
+/* Auto-hide the top nav after a few idle seconds (faster while the Mì Cay banner
+   fills the screen). Any tap / scroll / key press brings it back and resets. */
+(function () {
+    const body = document.body;
+    const banner = document.getElementById('best-seller');
+    let idle;
+
+    function bannerCovers() {
+        if (!banner) return false;
+        const r = banner.getBoundingClientRect();
+        return r.top <= 1 && r.bottom > window.innerHeight * 0.5;
+    }
+    function hide() {
+        // keep the nav visible at the very top of the page (unless on the banner)
+        if (window.scrollY < 60 && !bannerCovers()) return;
+        body.classList.add('nav-hidden');
+    }
+    function schedule() {
+        clearTimeout(idle);
+        idle = setTimeout(hide, bannerCovers() ? 1000 : 2000);
+    }
+    function wake() {
+        body.classList.remove('nav-hidden');
+        schedule();
+    }
+
+    ['touchstart', 'pointerdown', 'keydown'].forEach(ev =>
+        window.addEventListener(ev, wake, { passive: true }));
+    window.addEventListener('scroll', schedule, { passive: true });
+    schedule();
+})();
