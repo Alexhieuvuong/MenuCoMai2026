@@ -10,6 +10,7 @@
   var promoEl  = section.querySelector('.promo');
   var menuEl   = section.querySelector('.menu');
   var skipBtn  = section.querySelector('.skip-cue');
+  var cheBtn   = section.querySelector('.skip-che');
   var root     = document.documentElement;
   if (!scroller || !stage) return;
 
@@ -94,8 +95,10 @@
       o.el.style.opacity = isRamen ? dishfade : Math.max(0, 1 - e) * dishfade;
     });
 
-    // hide the skip button (and stop it intercepting taps) once the menu is reached
-    if (skipBtn) skipBtn.style.pointerEvents = cuefade < 0.05 ? 'none' : 'auto';
+    // cross-fade the two pills at the end of the banner: the Mì Cay button hands
+    // off to the Chè button, and only the visible one is tappable.
+    if (skipBtn) skipBtn.style.pointerEvents = cuefade < 0.5 ? 'none' : 'auto';
+    if (cheBtn)  cheBtn.style.pointerEvents  = cuefade < 0.5 ? 'auto' : 'none';
   }
 
   function onScroll() {
@@ -123,6 +126,14 @@
       var r = scroller.getBoundingClientRect();
       var y = window.scrollY + r.top + (scroller.offsetHeight - window.innerHeight);
       window.scrollTo({ top: y, behavior: 'auto' });
+    });
+  }
+
+  // Chè button (shown at the end of the banner) → jump on to the Chè menu.
+  if (cheBtn) {
+    cheBtn.addEventListener('click', function () {
+      var che = document.getElementById('che');
+      if (che) che.scrollIntoView({ behavior: 'auto' });
     });
   }
 

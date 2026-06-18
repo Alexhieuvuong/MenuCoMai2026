@@ -765,6 +765,10 @@
 #best-seller .skip-cue:hover { background: var(--ember); }
 #best-seller .skip-cue:active { transform: translateX(-50%) scale(.96); }
 
+/* Second pill, stacked on the first: fades IN at the end of the banner (inverse of
+   --cuefade) as the Mì Cay button fades out, and leads on to the Chè menu. */
+#best-seller .skip-che { opacity: calc(1 - var(--cuefade, 1)); }
+
 @media (prefers-reduced-motion: no-preference) {
 #best-seller .skip-arrow { display: inline-block; animation: bob 1.6s ease-in-out infinite; }
 }
