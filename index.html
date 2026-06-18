@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu – Sua Chua Co Mai</title>
+    <title>Menu Sữa Chua Cô Mai — Mì Cay · Chè · Tào Phớ · Sữa Chua</title>
+    <meta name="description"
+        content="Menu quán Sữa Chua Cô Mai (từ 2004) — Mì Cay, Chè, Tào Phớ, Sữa Chua, Caramen, đồ uống & ăn vặt. 14C Ô Cách, Đức Giang, Long Biên, Hà Nội. Đặt qua Zalo, ShopeeFood, GrabFood.">
+    <meta name="theme-color" content="#4c5b29">
+
+    <!-- Canonical + social share preview.
+         ⚠ After deploying, replace https://sua-chua-co-mai.netlify.app with your real
+         URL/custom domain (tip: name the Netlify site "sua-chua-co-mai" and this is already correct). -->
+    <link rel="canonical" href="https://sua-chua-co-mai.netlify.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sữa Chua Cô Mai">
+    <meta property="og:title" content="Menu Sữa Chua Cô Mai — Mì Cay · Chè · Tào Phớ">
+    <meta property="og:description"
+        content="Mì Cay, Chè, Tào Phớ, Sữa Chua, Caramen & nhiều món khác. Quán Cô Mai từ 2004 — 14C Ô Cách, Long Biên, Hà Nội.">
+    <meta property="og:url" content="https://sua-chua-co-mai.netlify.app/">
+    <meta property="og:image" content="https://sua-chua-co-mai.netlify.app/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="vi_VN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Menu Sữa Chua Cô Mai — Mì Cay · Chè · Tào Phớ">
+    <meta name="twitter:description"
+        content="Mì Cay, Chè, Tào Phớ, Sữa Chua, Caramen & nhiều món khác. Quán Cô Mai từ 2004.">
+    <meta name="twitter:image" content="https://sua-chua-co-mai.netlify.app/images/og-image.jpg">
+
+    <!-- Local business structured data (Google rich results / Maps).
+         TODO(owner): add openingHours when known. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Sữa Chua Cô Mai",
+      "image": "https://sua-chua-co-mai.netlify.app/images/og-image.jpg",
+      "url": "https://sua-chua-co-mai.netlify.app/",
+      "servesCuisine": ["Vietnamese", "Dessert", "Korean"],
+      "priceRange": "10.000₫ - 80.000₫",
+      "telephone": "+84988053359",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "14C Ô Cách, Đức Giang",
+        "addressLocality": "Long Biên",
+        "addressRegion": "Hà Nội",
+        "addressCountry": "VN"
+      },
+      "sameAs": [
+        "https://www.facebook.com/suachuacomai14ocach",
+        "https://shopeefood.shopee.vn/u/6XR9WMV",
+        "https://food.grab.com/vn/en/restaurant/sữa-chua-cô-mai-delivery/AWftgAybU0GQ11lNz9tt"
+      ]
+    }
+    </script>
 
     <!-- Always open the page at the very top: disable scroll restoration and
          strip any leftover #section hash (e.g. #che) before it can jump. -->
@@ -16,22 +66,18 @@
         })();
     </script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (site + Mì Cay banner) — one combined request; dropped the unused typewriter family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Montserrat:wght@600;700;800&family=Courier+Prime&display=swap"
-        rel="stylesheet">
-    <!-- Fonts used by the Mì Cay banner -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&family=Montserrat:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="images/favicon.webp">
 
-    <link rel="stylesheet" href="css/style.css?v=37">
-    <link rel="stylesheet" href="css/micay-banner.css?v=37">
+    <link rel="stylesheet" href="css/style.css?v=38">
+    <link rel="stylesheet" href="css/micay-banner.css?v=38">
 </head>
 
 <body>
@@ -243,23 +289,21 @@
                     </div></div>
                 </section>
 
+                <!-- MENU:START — generated from data/menu.json by build-menu.js; do not edit this block by hand (edit the JSON, then `npm run build-menu`). -->
+
                 <!-- Chè -->
                 <section id="che" class="menu-category">
                     <h2>Chè</h2>
                     <div class="menu-grid standard-grid">
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/SuaChuaMit.webp" alt="Chè Sữa Chua">
+                                <img src="images/SuaChuaMit.webp" alt="Chè Sữa Chua" width="1516" height="1516" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Chè Sữa Chua</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Sữa Chua Mít<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Sữa Chua Mít<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">25.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -293,18 +337,14 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/CheCaramen.webp" alt="Chè Caramen">
+                                <img src="images/CheCaramen.webp" alt="Chè Caramen" width="1537" height="1537" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Chè Caramen</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Caramen Mít<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Caramen Mít<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">25.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -320,9 +360,7 @@
                                     <span class="dish-price">25.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Caramen Trân Châu Thạch<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Caramen Trân Châu Thạch<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">25.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -344,18 +382,14 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/CheNgocThach.webp" alt="Chè Ngọc Thạch">
+                                <img src="images/CheNgocThach.webp" alt="Chè Ngọc Thạch" width="1467" height="1467" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Chè Ngọc Thạch</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Rau Câu Trân Châu<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Rau Câu Trân Châu<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">15.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -381,18 +415,14 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/chesau.webp" alt="Chè Sầu">
+                                <img src="images/chesau.webp" alt="Chè Sầu" width="1200" height="934" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Chè Sầu</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Chè Sầu<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Chè Sầu<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">30.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -402,18 +432,14 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/che-dua-dam.webp" alt="Dừa Dầm">
+                                <img src="images/che-dua-dam.webp" alt="Dừa Dầm" width="1454" height="1454" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Dừa Dầm</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Dừa Dầm<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Dừa Dầm<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">25.000đ</span>
                                 </div>
                             </div>
@@ -421,23 +447,19 @@
                     </div>
                 </section>
 
-                <!-- Tào Phớ     -->
+                <!-- Tào Phớ -->
                 <section id="taopho" class="menu-category">
                     <h2>Tào Phớ</h2>
                     <div class="menu-grid standard-grid">
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/TaoPho.webp" alt="Tào Phớ">
+                                <img src="images/TaoPho.webp" alt="Tào Phớ" width="1447" height="1447" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Tào Phớ</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Tào Phớ Thạch Trân Châu<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Tào Phớ Thạch Trân Châu<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">15.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -449,9 +471,7 @@
                                     <span class="dish-price">15.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Tào Phớ Caramen<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Tào Phớ Caramen<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">20.000đ</span>
                                 </div>
                             </div>
@@ -459,34 +479,27 @@
                     </div>
                 </section>
 
+                <!-- Sữa Chua -->
                 <section id="sua-chua" class="menu-category">
                     <h2>Sữa Chua</h2>
                     <div class="menu-grid standard-grid">
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/SuaChuaTrang.webp" alt="Sữa Chua Cô Mai">
+                                <img src="images/SuaChuaTrang.webp" alt="Sữa Chua Cô Mai" width="1472" height="1472" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Sữa Chua Cô Mai</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Sữa Chua Trắng <span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Sữa Chua Trắng<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">8.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Sữa Chua Nếp Cẩm<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Sữa Chua Nếp Cẩm<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">10.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Thạch Dừa<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Thạch Dừa<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">6.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -500,10 +513,8 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/Sua-chua-deo.webp" alt="Sữa Chua Dẻo">
+                                <img src="images/Sua-chua-deo.webp" alt="Sữa Chua Dẻo" width="832" height="832" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Sữa Chua Dẻo</h3>
                             <button class="see-more-btn">Xem Món</button>
@@ -513,9 +524,7 @@
                                     <span class="dish-price">25.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Sữa Chua Dẻo Cacao<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Sữa Chua Dẻo Cacao<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">25.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -541,18 +550,14 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/Banh-Flan-2.webp" alt="Caramen">
+                                <img src="images/Banh-Flan-2.webp" alt="Caramen" width="1920" height="1920" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Caramen</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Caramen 1 Hộp<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Caramen 1 Hộp<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">8.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -568,29 +573,23 @@
                     </div>
                 </section>
 
-                <!--Drinks -->
+                <!-- Đồ Uống -->
                 <section id="drinks" class="menu-category">
                     <h2>Đồ Uống</h2>
                     <div class="menu-grid standard-grid">
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/TraChanh.webp" alt="Trà Chanh">
+                                <img src="images/TraChanh.webp" alt="Trà" width="800" height="700" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Trà</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Trà Chanh<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Trà Chanh<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">10.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Trà Quất<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Trà Quất<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">10.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -598,7 +597,7 @@
                                     <span class="dish-price">10.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Trà Đào 20 </span>
+                                    <span class="dish-name">Trà Đào</span>
                                     <span class="dish-price">20.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -606,40 +605,36 @@
                                     <span class="dish-price">30.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Trà Vải </span>
+                                    <span class="dish-name">Trà Vải</span>
                                     <span class="dish-price">30.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Trà Nhiệt Đới </span>
+                                    <span class="dish-name">Trà Nhiệt Đới</span>
                                     <span class="dish-price">30.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Trà Mãng Cầu </span>
+                                    <span class="dish-name">Trà Mãng Cầu</span>
                                     <span class="dish-price">30.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Trà Đào Cam Sả </span>
+                                    <span class="dish-name">Trà Đào Cam Sả</span>
                                     <span class="dish-price">30.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Trà Chanh Leo Kim Quất </span>
+                                    <span class="dish-name">Trà Chanh Leo Kim Quất</span>
                                     <span class="dish-price">30.000đ</span>
                                 </div>
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/tra-sua.webp" alt="Trà Sữa">
+                                <img src="images/tra-sua.webp" alt="Trà Sữa" width="360" height="360" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Trà Sữa</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Trà Sữa<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Trà Sữa<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">20.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -649,18 +644,14 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/nuoc-ep-dua-hau.webp" alt="Nước Ép Theo Mùa">
+                                <img src="images/nuoc-ep-dua-hau.webp" alt="Nước Ép Theo Mùa" width="500" height="360" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Nước Ép Theo Mùa</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Nước Ép Dưa Hấu<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Nước Ép Dưa Hấu<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">30.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -678,18 +669,14 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/milo-dam.webp" alt="Đồ Uống Khác">
+                                <img src="images/milo-dam.webp" alt="Đồ Uống Khác" width="419" height="421" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Đồ Uống Khác</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Milo Dầm<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Milo Dầm<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">20.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -710,10 +697,8 @@
                     <h2>Ăn Vặt</h2>
                     <div class="menu-grid standard-grid">
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/Kimbap-chien.webp" alt="Kimbap Chiên">
+                                <img src="images/Kimbap-chien.webp" alt="Kimbap Chiên" width="1920" height="1280" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Kimbap Chiên</h3>
                             <button class="see-more-btn">Xem Món</button>
@@ -725,10 +710,8 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/nem-chua-ran.webp" alt="Nem Chua Rán">
+                                <img src="images/nem-chua-ran.webp" alt="Nem Chua Rán" width="800" height="800" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Nem Chua Rán</h3>
                             <button class="see-more-btn">Xem Món</button>
@@ -738,9 +721,7 @@
                                     <span class="dish-price">30.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Đĩa To<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Đĩa To<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">60.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -750,10 +731,8 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/phomaique.webp" alt="Phô Mai Que">
+                                <img src="images/phomaique.webp" alt="Phô Mai Que" width="710" height="564" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Phô Mai Que</h3>
                             <button class="see-more-btn">Xem Món</button>
@@ -763,47 +742,37 @@
                                     <span class="dish-price">40.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Sữa Tươi Chiên </span>
+                                    <span class="dish-name">Sữa Tươi Chiên</span>
                                     <span class="dish-price">Hết món</span>
                                 </div>
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/khoai-tay-chien.webp" alt="Khoai Tây Chiên">
+                                <img src="images/khoai-tay-chien.webp" alt="Khoai Tây Chiên" width="900" height="600" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Khoai Tây Chiên</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Khoai Tây Chiên<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Khoai Tây Chiên<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">30.000đ</span>
                                 </div>
                                 <div class="price-item">
-                                    <span class="dish-name">Khoai Tây Lắc Phô Mai<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Khoai Tây Lắc Phô Mai<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">35.000đ</span>
                                 </div>
                             </div>
                         </div>
                         <div class="menu-item">
-                            <span class="heart-icon"><img src="images/like-icon.svg" class="must-try-heart"
-                                    alt="Top Pick"></span>
                             <div class="menu-item-image">
-                                <img src="images/Tokbokki.webp" alt="Tokbokki">
+                                <img src="images/Tokbokki.webp" alt="Tokbokki" width="1280" height="960" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Tokbokki</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Tokbokki<span class="recommended-icon"><img
-                                                src="images/like-icon.svg" class="must-try-inline"
-                                                alt="Top Pick"></span></span>
+                                    <span class="dish-name">Tokbokki<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">30.000đ</span>
                                 </div>
                                 <div class="price-item">
@@ -818,43 +787,43 @@
                         </div>
                         <div class="menu-item">
                             <div class="menu-item-image">
-                                <img src="images/kem-ly.webp" alt="Kem Các Loại">
+                                <img src="images/kem-ly.webp" alt="Kem Các Loại" width="800" height="800" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Kem Các Loại</h3>
                             <button class="see-more-btn">Xem Món</button>
                             <div class="price-list">
                                 <div class="price-item">
-                                    <span class="dish-name">Kem Các Loại</span>
+                                    <span class="dish-name">Kem Các Loại<span class="recommended-icon"><img src="images/like-icon.svg" class="must-try-inline" alt="Top Pick"></span></span>
                                     <span class="dish-price">Từ 5.000đ</span>
                                 </div>
                                 <div class="price-item">
                                     <span class="dish-name">Kem Ly</span>
-                                    <span class="dish-price">đ</span>
+                                    <span class="dish-price">Theo loại</span>
                                 </div>
                                 <div class="price-item">
                                     <span class="dish-name">Kem Ốc Quế</span>
-                                    <span class="dish-price">đ</span>
+                                    <span class="dish-price">Theo loại</span>
                                 </div>
                                 <div class="price-item">
                                     <span class="dish-name">Kem Tràng Tiền</span>
-                                    <span class="dish-price">đ</span>
+                                    <span class="dish-price">Theo loại</span>
                                 </div>
                                 <div class="price-item">
                                     <span class="dish-name">Kem Cá Hàn Quốc</span>
-                                    <span class="dish-price">đ</span>
+                                    <span class="dish-price">Theo loại</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Đặt Hàng -->
+                <!-- Đặt Tiệc -->
                 <section id="dat-hang" class="menu-category">
-                    <h2 class="category-title">Đặt Tiệc</h2>
+                    <h2>Đặt Tiệc</h2>
                     <div class="menu-grid standard-grid">
                         <div class="menu-item">
                             <div class="menu-item-image">
-                                <img src="images/caramen-dam-cuoi.webp" alt="Đặt Hàng Đám Cưới/Liên Hoan">
+                                <img src="images/caramen-dam-cuoi.webp" alt="Đặt Hàng Đám Cưới/Liên Hoan" width="1024" height="535" loading="lazy" decoding="async">
                             </div>
                             <h3 class="menu-item-title">Đặt Hàng Đám Cưới/Liên Hoan</h3>
                             <button class="see-more-btn">Xem Món</button>
@@ -879,6 +848,8 @@
                         </div>
                     </div>
                 </section>
+
+                <!-- MENU:END -->
 
             </div>
             </section>
@@ -984,8 +955,8 @@
         </div>
     </div>
 
-    <script src="js/main.js?v=37"></script>
-    <script src="js/micay-banner.js?v=37" defer></script>
+    <script src="js/main.js?v=38"></script>
+    <script src="js/micay-banner.js?v=38" defer></script>
 </body>
 
 </html>

@@ -84,5 +84,4 @@
     /* Fonts */
     --font-body: "IBM Plex Mono", monospace;
     --font-heading: "Montserrat", sans-serif; /* Fallback for Beau Lulo Clean */
-    --font-typewriter: "Courier Prime", monospace; /* Fallback for Nitti Typewriter */
 }

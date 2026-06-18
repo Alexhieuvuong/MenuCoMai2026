@@ -5,7 +5,9 @@
   "description": "Sữa Chua Cô Mai — mobile-first menu site with an animated Mì Cay scroll banner",
   "scripts": {
     "start": "python3 -m http.server 8765",
-    "convert-images": "node convert_images.js"
+    "convert-images": "node convert_images.js",
+    "build-menu": "node build-menu.js",
+    "build": "node build-menu.js"
   },
   "author": "Alexhieuvuong",
   "license": "UNLICENSED",

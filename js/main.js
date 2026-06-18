@@ -1,5 +1,3 @@
-console.log("Sua Chua Co Mai - Main JS Loaded");
-
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');

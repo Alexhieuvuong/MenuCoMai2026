@@ -1,0 +1,245 @@
+{
+  "_comment": "Single source of truth for the menu. Edit prices/items here, then run `npm run build-menu` to regenerate the menu section of index.html. Each item is { name, price, recommended? }. `price` is the right-hand text and may be a number like \"25.000đ\" or a label like \"Liên Hệ\" / \"Hết món\" / \"+10.000đ\". The build FAILS if a price is empty or has no digit/letter (e.g. a bare \"đ\"). `recommended: true` shows the little heart next to the name. The #best-seller Mì Cay banner is hand-authored in index.html and is NOT generated from this file.",
+  "sections": [
+    {
+      "id": "che",
+      "title": "Chè",
+      "cards": [
+        {
+          "title": "Chè Sữa Chua",
+          "image": "images/SuaChuaMit.webp",
+          "items": [
+            { "name": "Sữa Chua Mít", "price": "25.000đ", "recommended": true },
+            { "name": "Chè Sữa Chua Nếp Cẩm", "price": "25.000đ" },
+            { "name": "Chè Sữa Chua Nếp Mít", "price": "25.000đ" },
+            { "name": "Chè Sữa Chua Trà Xanh", "price": "25.000đ" },
+            { "name": "Chè Sữa Chua Nha Đam", "price": "25.000đ" },
+            { "name": "Chè Sữa Chua Sốt Xoài", "price": "25.000đ" },
+            { "name": "Chè Sữa Chua Caramen", "price": "30.000đ" },
+            { "name": "Sữa Chua Bơ (mùa)", "price": "25.000đ" }
+          ]
+        },
+        {
+          "title": "Chè Caramen",
+          "image": "images/CheCaramen.webp",
+          "items": [
+            { "name": "Caramen Mít", "price": "25.000đ", "recommended": true },
+            { "name": "Caramen Nha Đam", "price": "25.000đ" },
+            { "name": "Caramen Nếp Cẩm", "price": "25.000đ" },
+            { "name": "Caramen Nếp Mít", "price": "25.000đ" },
+            { "name": "Caramen Trân Châu Thạch", "price": "25.000đ", "recommended": true },
+            { "name": "Caramen Rau Câu Sốt Xoài", "price": "25.000đ" },
+            { "name": "Caramen Rau Câu Sữa Dừa", "price": "25.000đ" },
+            { "name": "Caramen Rau Câu Trà Xanh", "price": "25.000đ" },
+            { "name": "Caramen Rau Câu Sữa Chua", "price": "30.000đ" }
+          ]
+        },
+        {
+          "title": "Chè Ngọc Thạch",
+          "image": "images/CheNgocThach.webp",
+          "items": [
+            { "name": "Rau Câu Trân Châu", "price": "15.000đ", "recommended": true },
+            { "name": "Rau Câu Trà Xanh", "price": "15.000đ" },
+            { "name": "Rau Câu Dâu", "price": "15.000đ" },
+            { "name": "Rau Câu Cà Phê", "price": "15.000đ" },
+            { "name": "Rau Câu Cốt Dừa", "price": "15.000đ" },
+            { "name": "Rau Câu Chanh Leo", "price": "15.000đ" }
+          ]
+        },
+        {
+          "title": "Chè Sầu",
+          "image": "images/chesau.webp",
+          "items": [
+            { "name": "Chè Sầu", "price": "30.000đ", "recommended": true },
+            { "name": "Chè Sầu Mít", "price": "35.000đ" }
+          ]
+        },
+        {
+          "title": "Dừa Dầm",
+          "image": "images/che-dua-dam.webp",
+          "items": [
+            { "name": "Dừa Dầm", "price": "25.000đ", "recommended": true }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taopho",
+      "title": "Tào Phớ",
+      "cards": [
+        {
+          "title": "Tào Phớ",
+          "image": "images/TaoPho.webp",
+          "items": [
+            { "name": "Tào Phớ Thạch Trân Châu", "price": "15.000đ", "recommended": true },
+            { "name": "Tào Phớ Trà Xanh/Bạc Hà", "price": "15.000đ" },
+            { "name": "Tào Phớ Nha Đam", "price": "15.000đ" },
+            { "name": "Tào Phớ Caramen", "price": "20.000đ", "recommended": true }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sua-chua",
+      "title": "Sữa Chua",
+      "cards": [
+        {
+          "title": "Sữa Chua Cô Mai",
+          "image": "images/SuaChuaTrang.webp",
+          "items": [
+            { "name": "Sữa Chua Trắng", "price": "8.000đ", "recommended": true },
+            { "name": "Sữa Chua Nếp Cẩm", "price": "10.000đ", "recommended": true },
+            { "name": "Thạch Dừa", "price": "6.000đ", "recommended": true },
+            { "name": "Sữa Tươi", "price": "12.000đ" },
+            { "name": "Sữa Tươi 1 Lít", "price": "35.000đ" }
+          ]
+        },
+        {
+          "title": "Sữa Chua Dẻo",
+          "image": "images/Sua-chua-deo.webp",
+          "items": [
+            { "name": "Sữa Chua Dẻo Thường", "price": "25.000đ" },
+            { "name": "Sữa Chua Dẻo Cacao", "price": "25.000đ", "recommended": true },
+            { "name": "Sữa Chua Dẻo Sốt Xoài", "price": "25.000đ" },
+            { "name": "Sữa Chua Dẻo Việt Quất", "price": "25.000đ" },
+            { "name": "Sữa Chua Dẻo Trà Xanh", "price": "25.000đ" },
+            { "name": "Sữa Chua Dẻo Dâu Tây", "price": "25.000đ" },
+            { "name": "Sữa Chua Dẻo Chanh Leo", "price": "25.000đ" }
+          ]
+        },
+        {
+          "title": "Caramen",
+          "image": "images/Banh-Flan-2.webp",
+          "items": [
+            { "name": "Caramen 1 Hộp", "price": "8.000đ", "recommended": true },
+            { "name": "Caramen 10 Hộp", "price": "80.000đ" },
+            { "name": "Caramen Đám Cưới", "price": "Liên Hệ" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "title": "Đồ Uống",
+      "cards": [
+        {
+          "title": "Trà",
+          "image": "images/TraChanh.webp",
+          "items": [
+            { "name": "Trà Chanh", "price": "10.000đ", "recommended": true },
+            { "name": "Trà Quất", "price": "10.000đ", "recommended": true },
+            { "name": "Trà Nhài", "price": "10.000đ" },
+            { "name": "Trà Đào", "price": "20.000đ" },
+            { "name": "Trà Đào Cốc To", "price": "30.000đ" },
+            { "name": "Trà Vải", "price": "30.000đ" },
+            { "name": "Trà Nhiệt Đới", "price": "30.000đ" },
+            { "name": "Trà Mãng Cầu", "price": "30.000đ" },
+            { "name": "Trà Đào Cam Sả", "price": "30.000đ" },
+            { "name": "Trà Chanh Leo Kim Quất", "price": "30.000đ" }
+          ]
+        },
+        {
+          "title": "Trà Sữa",
+          "image": "images/tra-sua.webp",
+          "items": [
+            { "name": "Trà Sữa", "price": "20.000đ", "recommended": true },
+            { "name": "Trà Sữa Các Vị", "price": "20.000đ" }
+          ]
+        },
+        {
+          "title": "Nước Ép Theo Mùa",
+          "image": "images/nuoc-ep-dua-hau.webp",
+          "items": [
+            { "name": "Nước Ép Dưa Hấu", "price": "30.000đ", "recommended": true },
+            { "name": "Nước Ép Táo", "price": "30.000đ" },
+            { "name": "Nước Ép Dứa", "price": "30.000đ" },
+            { "name": "Nước Cam Vắt", "price": "30.000đ" }
+          ]
+        },
+        {
+          "title": "Đồ Uống Khác",
+          "image": "images/milo-dam.webp",
+          "items": [
+            { "name": "Milo Dầm", "price": "20.000đ", "recommended": true },
+            { "name": "Cacao Nóng/Đá", "price": "20.000đ" },
+            { "name": "Cà Phê Đen/Nâu", "price": "20.000đ" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anvat",
+      "title": "Ăn Vặt",
+      "cards": [
+        {
+          "title": "Kimbap Chiên",
+          "image": "images/Kimbap-chien.webp",
+          "items": [
+            { "name": "Kimbap Chiên", "price": "40.000đ" }
+          ]
+        },
+        {
+          "title": "Nem Chua Rán",
+          "image": "images/nem-chua-ran.webp",
+          "items": [
+            { "name": "Đĩa Nhỏ", "price": "30.000đ" },
+            { "name": "Đĩa To", "price": "60.000đ", "recommended": true },
+            { "name": "Xúc Xích Rán", "price": "10.000đ" }
+          ]
+        },
+        {
+          "title": "Phô Mai Que",
+          "image": "images/phomaique.webp",
+          "items": [
+            { "name": "Phô Mai Que 5 cái", "price": "40.000đ" },
+            { "name": "Sữa Tươi Chiên", "price": "Hết món" }
+          ]
+        },
+        {
+          "title": "Khoai Tây Chiên",
+          "image": "images/khoai-tay-chien.webp",
+          "items": [
+            { "name": "Khoai Tây Chiên", "price": "30.000đ", "recommended": true },
+            { "name": "Khoai Tây Lắc Phô Mai", "price": "35.000đ", "recommended": true }
+          ]
+        },
+        {
+          "title": "Tokbokki",
+          "image": "images/Tokbokki.webp",
+          "items": [
+            { "name": "Tokbokki", "price": "30.000đ", "recommended": true },
+            { "name": "Thêm Cá Viên", "price": "+10.000đ" },
+            { "name": "Thêm Xúc Xích", "price": "+10.000đ" }
+          ]
+        },
+        {
+          "title": "Kem Các Loại",
+          "image": "images/kem-ly.webp",
+          "items": [
+            { "name": "Kem Các Loại", "price": "Từ 5.000đ", "recommended": true },
+            { "name": "Kem Ly", "price": "Theo loại", "todo": "OWNER: điền giá thật (placeholder cũ bị lỗi 'đ')" },
+            { "name": "Kem Ốc Quế", "price": "Theo loại", "todo": "OWNER: điền giá thật" },
+            { "name": "Kem Tràng Tiền", "price": "Theo loại", "todo": "OWNER: điền giá thật" },
+            { "name": "Kem Cá Hàn Quốc", "price": "Theo loại", "todo": "OWNER: điền giá thật" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dat-hang",
+      "title": "Đặt Tiệc",
+      "cards": [
+        {
+          "title": "Đặt Hàng Đám Cưới/Liên Hoan",
+          "image": "images/caramen-dam-cuoi.webp",
+          "items": [
+            { "name": "Caramen Set Đám Cưới", "price": "Liên Hệ" },
+            { "name": "Sữa Chua Nếp Cẩm Đám Cưới", "price": "Liên Hệ" },
+            { "name": "Ship Chè Cơ Quan/Bệnh Viện", "price": "Liên Hệ" },
+            { "name": "Liên Hoan Trường Học", "price": "Liên Hệ" }
+          ]
+        }
+      ]
+    }
+  ]
+}
