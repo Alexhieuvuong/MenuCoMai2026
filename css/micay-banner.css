@@ -743,20 +743,34 @@
   100% { opacity: 1;  transform: rotate(var(--a)) translateX(var(--r))  rotate(var(--spin))  scale(1); }
 }
 
-#best-seller .scroll-cue {
-  position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%);
-  z-index: 50;
-  font-family: 'Space Mono', monospace; font-size: 10px;
-  letter-spacing: .28em; text-transform: uppercase;
-  color: var(--muted);
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  opacity: var(--cuefade, 1); white-space: nowrap;  /* stays through page 2 */
+/* Skip-to-menu button — pinned to the bottom of the banner viewport (not the
+   scaled stage). Reuses the dish-nav pill look; fades out via --cuefade as you
+   reach the Mì Cay menu page so it's gone once you've arrived. */
+#best-seller .skip-cue {
+  position: absolute; left: 50%; bottom: max(18px, env(safe-area-inset-bottom));
+  transform: translateX(-50%); z-index: 60;
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 22px; border-radius: 999px;
+  background: rgba(14, 12, 9, .82); border: 1px solid var(--line);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .45);
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 700; font-size: 14px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink); white-space: nowrap;
+  opacity: var(--cuefade, 1);
+  transition: opacity .2s ease, background .2s ease, transform .12s ease;
 }
 
-#best-seller .scroll-cue span { color: var(--ink-dim); font-size: 13px; }
+#best-seller .skip-cue:hover { background: var(--ember); }
+#best-seller .skip-cue:active { transform: translateX(-50%) scale(.96); }
+
+/* Second pill, stacked on the first: fades IN at the end of the banner (inverse of
+   --cuefade) as the Mì Cay button fades out, and leads on to the Chè menu. */
+#best-seller .skip-che { opacity: calc(1 - var(--cuefade, 1)); }
 
 @media (prefers-reduced-motion: no-preference) {
-#best-seller .scroll-cue span { animation: bob 1.6s ease-in-out infinite; }
+#best-seller .skip-arrow { display: inline-block; animation: bob 1.6s ease-in-out infinite; }
 }
 
 @keyframes bob {

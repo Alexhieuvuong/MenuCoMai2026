@@ -1,5 +1,3 @@
-console.log("Sua Chua Co Mai - Main JS Loaded");
-
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -49,7 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    window.addEventListener('scroll', highlightSidebar);
+    var spyTicking = false;
+    window.addEventListener('scroll', function () {
+        if (spyTicking) return;
+        spyTicking = true;
+        requestAnimationFrame(function () { spyTicking = false; highlightSidebar(); });
+    }, { passive: true });
 
     // Roll down a card's price list inline. Keyboard-accessible via the button,
     // and clicking anywhere on the card also toggles it.

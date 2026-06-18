@@ -1,0 +1,29 @@
+# Netlify config — Sữa Chua Cô Mai menu (plain static site).
+# The menu HTML is generated from data/menu.json; the build step regenerates it so
+# the deploy always matches the data file. (node_modules is gitignored and not served.)
+[build]
+  command = "npm run build-menu"
+  publish = "."
+
+# Security header for everything.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+
+# HTML: always revalidate so menu/price edits appear immediately.
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Photos: cache for a day, then revalidate.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/uploads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
