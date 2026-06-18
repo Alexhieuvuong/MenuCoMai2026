@@ -9,6 +9,7 @@
   var stage    = section.querySelector('#stage');
   var promoEl  = section.querySelector('.promo');
   var menuEl   = section.querySelector('.menu');
+  var skipBtn  = section.querySelector('.skip-cue');
   var root     = document.documentElement;
   if (!scroller || !stage) return;
 
@@ -92,6 +93,9 @@
       var isRamen = o.el.classList.contains('ing-ramen');
       o.el.style.opacity = isRamen ? dishfade : Math.max(0, 1 - e) * dishfade;
     });
+
+    // hide the skip button (and stop it intercepting taps) once the menu is reached
+    if (skipBtn) skipBtn.style.pointerEvents = cuefade < 0.05 ? 'none' : 'auto';
   }
 
   function onScroll() {
@@ -103,8 +107,27 @@
     apply(p);
   }
 
+  // rAF-throttle scroll: run the scrub at most once per frame to avoid thrashing.
+  var ticking = false;
+  function requestTick() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { ticking = false; onScroll(); });
+  }
+
+  // Skip button → jump to the end of the banner scrub (the Mì Cay menu page).
+  // 'auto' overrides the global scroll-behavior:smooth so we don't fast-replay
+  // the whole animation over the jump.
+  if (skipBtn) {
+    skipBtn.addEventListener('click', function () {
+      var r = scroller.getBoundingClientRect();
+      var y = window.scrollY + r.top + (scroller.offsetHeight - window.innerHeight);
+      window.scrollTo({ top: y, behavior: 'auto' });
+    });
+  }
+
   window.addEventListener('resize', function () { fit(); onScroll(); });
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', requestTick, { passive: true });
   fit();
   onScroll();
 })();
