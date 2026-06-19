@@ -16,7 +16,10 @@
 
 #best-seller .scroller { position: relative; height: 680vh; }
 
-#best-seller .pin { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+/* 100dvh (not 100vh): on iOS Safari 100vh is the *large* viewport, so anything
+   pinned to the pin's bottom (the "Xem Chè" pill) ends up behind the toolbar /
+   home indicator. dvh tracks the actually-visible area so the pill stays on top. */
+#best-seller .pin { position: sticky; top: 0; height: 100vh; height: 100dvh; overflow: hidden; }
 
 #best-seller #viewport { position: absolute; inset: 0; }
 
@@ -784,13 +787,15 @@
 }
 #best-seller .skip-cue:active { transform: translateX(-50%) scale(.96); }
 
-/* "Xem Chè" pill: appears once the ingredients have assembled into the Mì Cay menu
-   (--mfade), cross-fading with the Scroll-down cue. Leads on to the Chè menu. No
-   animated effect inside the button. */
+/* "Xem Chè" pill: a page-2 control. Stays hidden on page 1 (so it doesn't crowd
+   the "Scroll" cue) and fades in with the Mì Cay menu (--mfade), cross-fading with
+   the Scroll-down cue at the same spot — an escape to the Chè menu for customers
+   who didn't come for Mì Cay. The menu assembles sooner now, so it appears sooner. */
 #best-seller .skip-che { opacity: var(--mfade, 0); }
 
 /* Best Seller phase: a bigger "scroll down" hint (just a cue, not a button). Fades
-   out as the menu assembles in (--pfade), handing off to the Chè pill. */
+   out as the menu assembles in (--pfade), cross-fading into the "Xem Chè" pill at
+   the same spot — so page 1 shows only the cue, page 2 only the pill. */
 #best-seller .scroll-down {
   position: absolute; left: 50%; bottom: max(18px, env(safe-area-inset-bottom));
   transform: translateX(-50%); z-index: 60;

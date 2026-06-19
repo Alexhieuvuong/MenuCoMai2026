@@ -32,18 +32,39 @@
   function ease(t)  { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
   function clamp(v) { return Math.max(0, Math.min(1, v)); }
 
+  // "Small" viewport height (the height with the mobile browser toolbar showing).
+  // It stays put while the toolbar shows/hides during scroll — unlike innerHeight,
+  // which grows as the toolbar collapses and used to make the whole banner jump in
+  // size mid-scroll. Falls back to innerHeight where 100svh isn't supported.
+  function smallVH() {
+    if (window.CSS && CSS.supports && CSS.supports('height', '100svh')) {
+      var probe = document.createElement('div');
+      probe.style.cssText = 'position:fixed;left:0;top:0;width:0;height:100svh;visibility:hidden;pointer-events:none';
+      document.body.appendChild(probe);
+      var h = probe.getBoundingClientRect().height;
+      document.body.removeChild(probe);
+      if (h > 0) return h;
+    }
+    return window.innerHeight;
+  }
+
+  var stageH = smallVH();
   function fit() {
-    var s = Math.min(window.innerWidth / 430, window.innerHeight / 932);
+    // Contain the 430×932 design canvas in the *stable* small viewport, so the
+    // banner holds one consistent size per device instead of rescaling as the
+    // toolbar moves. The pin's gradient is full-bleed behind it either way.
+    var s = Math.min(window.innerWidth / 430, stageH / 932);
     stage.style.transform = 'translate(-50%,-50%) scale(' + s + ')';
   }
 
   function apply(p) {
-    // 2-page timeline, stretched to fill the (now shorter) scrub so nothing sits
-    // frozen: assemble (0 → 0.55) → promo→menu swap (0.30 → 0.52) → real-dish
-    // reveal (0.55 → 0.88) → a brief settle before the pin releases (0.88 → 1).
-    var cf       = clamp(1 - p / 0.40);
-    var swap     = clamp((p - 0.30) / 0.22);
-    var realfade = clamp((p - 0.55) / 0.33);
+    // 2-page timeline: a quick page-1 assembly that hands off to the finished
+    // page-2 (Mì Cay menu + dish) early, which then holds so it can be read and the
+    // "Xem Chè" escape used. assemble (0 → 0.40) → promo→menu swap (0.20 → 0.38) →
+    // real-dish reveal (0.40 → 0.60) → page 2 holds (0.60 → 1).
+    var cf       = clamp(1 - p / 0.25);
+    var swap     = clamp((p - 0.20) / 0.18);
+    var realfade = clamp((p - 0.40) / 0.20);
     var dishfade = 1 - realfade;
 
     // Offset the cross-fade so the promo and menu headlines don't both bloom at
@@ -64,7 +85,7 @@
     menuEl.style.pointerEvents = darkOn ? 'auto' : 'none';
     menuEl.setAttribute('aria-hidden', darkOn ? 'false' : 'true');
 
-    var pm = clamp(p / 0.55);
+    var pm = clamp(p / 0.40);
 
     if (pm >= 0.93 && !splashFired) {
       splashFired = true;
@@ -100,7 +121,8 @@
       o.el.style.opacity = isRamen ? dishfade : Math.max(0, 1 - e) * dishfade;
     });
 
-    // the "Xem Chè" pill is only tappable once the Mì Cay menu has assembled in.
+    // "Xem Chè" is a page-2 control: only tappable once the Mì Cay menu is in,
+    // so a page-1 tap (where the pill is invisible) can't jump away by accident.
     if (cheBtn) cheBtn.style.pointerEvents = swap > 0.5 ? 'auto' : 'none';
   }
 
@@ -121,8 +143,9 @@
     requestAnimationFrame(function () { ticking = false; onScroll(); });
   }
 
-  // Chè button (shown once the Mì Cay menu has assembled) → jump on to the Chè menu.
-  // 'auto' overrides the global scroll-behavior:smooth.
+  // "Xem Chè" pill — now an always-available escape: a customer who came for the
+  // Chè menu (not Mì Cay) can tap out from the very first frame instead of being
+  // pinned through the whole assembly. 'auto' overrides scroll-behavior:smooth.
   if (cheBtn) {
     cheBtn.addEventListener('click', function () {
       var che = document.getElementById('che');
@@ -130,7 +153,13 @@
     });
   }
 
-  window.addEventListener('resize', function () { fit(); onScroll(); });
+  // Only re-probe the stable height when the width actually changes (orientation),
+  // not on every toolbar show/hide — those keep the same small-viewport height.
+  var lastW = window.innerWidth;
+  window.addEventListener('resize', function () {
+    if (window.innerWidth !== lastW) { lastW = window.innerWidth; stageH = smallVH(); }
+    fit(); onScroll();
+  });
   window.addEventListener('scroll', requestTick, { passive: true });
   fit();
   onScroll();
