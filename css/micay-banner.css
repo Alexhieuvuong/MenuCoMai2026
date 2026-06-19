@@ -241,20 +241,37 @@
 
 #best-seller .m-price {
   font-family: 'Anton', sans-serif;
-  font-size: 28px; color: var(--ink); white-space: nowrap; letter-spacing: -.01em;
+  font-size: 32px; color: #fff; white-space: nowrap; letter-spacing: -.01em;
+  text-shadow: 0 2px 10px rgba(0,0,0,.55);
 }
 
 #best-seller .m-price small {
   font-family: 'Space Mono', monospace;
-  font-size: 12px; color: var(--muted); vertical-align: super; margin-left: 1px;
+  font-size: 14px; font-weight: 700; color: var(--ember);
+  vertical-align: super; margin-left: 2px;
 }
 
-#best-seller .m-foot { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; align-items: flex-start; }
+#best-seller .m-foot { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; gap: 8px; margin-top: 24px; align-items: center; }
 
 #best-seller .m-foot .note {
+  display: inline-flex; align-items: center; gap: 5px;
   font-family: 'Space Mono', monospace;
-  font-size: 10px; letter-spacing: .08em; color: var(--muted); opacity: .5;
+  font-size: 13px; font-weight: 700; letter-spacing: .02em;
+  color: #fff; opacity: 1;
+  background: var(--ember);
+  padding: 6px 12px; border-radius: 999px;
+  text-transform: uppercase; white-space: nowrap;
+  box-shadow: 0 2px 14px rgba(232,71,42,.5);
 }
+
+#best-seller .m-foot .note.note-alt {
+  background: transparent;
+  color: var(--ember);
+  border: 1.5px solid var(--ember);
+  box-shadow: none;
+}
+
+#best-seller .m-foot .note .note-ico { font-size: 14px; line-height: 1; }
 
 #best-seller .menu-dessert {
   position: absolute; inset: 0; z-index: 39;
@@ -758,10 +775,13 @@
   font-weight: 700; font-size: 14px; letter-spacing: .06em; text-transform: uppercase;
   color: var(--ink); white-space: nowrap;
   opacity: var(--cuefade, 1);
+  touch-action: manipulation;
   transition: opacity .2s ease, background .2s ease, transform .12s ease;
 }
 
-#best-seller .skip-cue:hover { background: var(--ember); }
+@media (hover: hover) {
+  #best-seller .skip-cue:hover { background: var(--ember); }
+}
 #best-seller .skip-cue:active { transform: translateX(-50%) scale(.96); }
 
 /* "Xem Chè" pill: appears once the ingredients have assembled into the Mì Cay menu
