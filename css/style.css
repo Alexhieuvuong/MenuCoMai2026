@@ -1159,7 +1159,7 @@ footer {
    base rule so it wins on source order (same specificity). */
 @media (max-width: 600px) {
     .notification-modal p {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
     }
 }
 
