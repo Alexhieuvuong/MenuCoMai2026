@@ -1066,7 +1066,11 @@
 /* ── Full-bleed, page-synced 2-page banner ── */
 #best-seller { padding: 0; }
 #best-seller > h2 { margin-bottom: 1rem; }
-#best-seller .scroller { height: 260vh; width: 100vw; margin-left: calc(50% - 50vw); }
+/* Effective scroller height (this override wins over the 680vh near the top).
+   The animation now fills the scrub and ends ~0.88, so there's no frozen tail —
+   180vh keeps the same scrub speed for the animated portion, just without the
+   dead ~0.8-screen hold the 260vh version left after the dish revealed. */
+#best-seller .scroller { height: 180vh; width: 100vw; margin-left: calc(50% - 50vw); }
 #best-seller .pin {
     width: 100%;
     background:

@@ -38,17 +38,23 @@
   }
 
   function apply(p) {
-    // 2-page timeline: assemble (0 → ~0.55) → dish reveal + mì cay menu (→ 1)
-    var cf       = clamp(1 - p / 0.25);
-    var swap     = clamp((p - 0.12) / 0.20);
-    var realfade = clamp((p - 0.34) / 0.16);
+    // 2-page timeline, stretched to fill the (now shorter) scrub so nothing sits
+    // frozen: assemble (0 → 0.55) → promo→menu swap (0.30 → 0.52) → real-dish
+    // reveal (0.55 → 0.88) → a brief settle before the pin releases (0.88 → 1).
+    var cf       = clamp(1 - p / 0.40);
+    var swap     = clamp((p - 0.30) / 0.22);
+    var realfade = clamp((p - 0.55) / 0.33);
     var dishfade = 1 - realfade;
-    var cuefade  = 1 - clamp((p - 0.80) / 0.10);
+
+    // Offset the cross-fade so the promo and menu headlines don't both bloom at
+    // half-opacity stacked on top of each other: the promo clears out first, then
+    // the menu fades in (they only graze near-zero opacity at the midpoint).
+    var pfade = 1 - clamp(swap / 0.55);
+    var mfade = clamp((swap - 0.45) / 0.55);
 
     root.style.setProperty('--cfade',    cf);
-    root.style.setProperty('--cuefade',  cuefade);
-    root.style.setProperty('--pfade',    1 - swap);
-    root.style.setProperty('--mfade',    swap);
+    root.style.setProperty('--pfade',    pfade);
+    root.style.setProperty('--mfade',    mfade);
     root.style.setProperty('--realfade', realfade);
     root.style.setProperty('--realout',  0);
     root.style.setProperty('--dishfade', dishfade);
@@ -58,7 +64,7 @@
     menuEl.style.pointerEvents = darkOn ? 'auto' : 'none';
     menuEl.setAttribute('aria-hidden', darkOn ? 'false' : 'true');
 
-    var pm = clamp(p / 0.34);
+    var pm = clamp(p / 0.55);
 
     if (pm >= 0.93 && !splashFired) {
       splashFired = true;
