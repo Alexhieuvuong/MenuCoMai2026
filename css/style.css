@@ -1154,6 +1154,15 @@ footer {
     margin-bottom: 2.5rem;
 }
 
+/* Phones: shrink the notice text so "Quán Cô Mai xin phép điều chỉnh giá"
+   stays on one row down to the narrowest ~360px screens. Placed after the
+   base rule so it wins on source order (same specificity). */
+@media (max-width: 600px) {
+    .notification-modal p {
+        font-size: 1.25rem;
+    }
+}
+
 .notification-btn {
     background-color: var(--army-green);
     color: white;
