@@ -1159,7 +1159,13 @@ footer {
    base rule so it wins on source order (same specificity). */
 @media (max-width: 600px) {
     .notification-modal p {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+    }
+    /* Trim side padding so the bigger text still keeps the nowrap line
+       ("Quán Cô Mai xin phép điều chỉnh giá") on one row at ~360px. */
+    .notification-modal .notification-content {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
 
