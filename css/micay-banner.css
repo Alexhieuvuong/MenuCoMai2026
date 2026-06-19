@@ -743,9 +743,8 @@
   100% { opacity: 1;  transform: rotate(var(--a)) translateX(var(--r))  rotate(var(--spin))  scale(1); }
 }
 
-/* Skip-to-menu button — pinned to the bottom of the banner viewport (not the
-   scaled stage). Reuses the dish-nav pill look; fades out via --cuefade as you
-   reach the Mì Cay menu page so it's gone once you've arrived. */
+/* Banner pill button — pinned to the bottom of the banner viewport (not the scaled
+   stage). Reuses the dish-nav pill look; opacity is set per-state below. */
 #best-seller .skip-cue {
   position: absolute; left: 50%; bottom: max(18px, env(safe-area-inset-bottom));
   transform: translateX(-50%); z-index: 60;
@@ -765,12 +764,26 @@
 #best-seller .skip-cue:hover { background: var(--ember); }
 #best-seller .skip-cue:active { transform: translateX(-50%) scale(.96); }
 
-/* Second pill, stacked on the first: fades IN at the end of the banner (inverse of
-   --cuefade) as the Mì Cay button fades out, and leads on to the Chè menu. */
-#best-seller .skip-che { opacity: calc(1 - var(--cuefade, 1)); }
+/* "Xem Chè" pill: appears once the ingredients have assembled into the Mì Cay menu
+   (--mfade), cross-fading with the Scroll-down cue. Leads on to the Chè menu. No
+   animated effect inside the button. */
+#best-seller .skip-che { opacity: var(--mfade, 0); }
+
+/* Best Seller phase: a bigger "scroll down" hint (just a cue, not a button). Fades
+   out as the menu assembles in (--pfade), handing off to the Chè pill. */
+#best-seller .scroll-down {
+  position: absolute; left: 50%; bottom: max(18px, env(safe-area-inset-bottom));
+  transform: translateX(-50%); z-index: 60;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  font-family: 'Space Mono', monospace;
+  font-size: 14px; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--ink-dim); white-space: nowrap;
+  opacity: var(--pfade, 1); pointer-events: none;
+}
+#best-seller .scroll-down .sd-arrow { font-size: 22px; color: var(--ember); line-height: 1; }
 
 @media (prefers-reduced-motion: no-preference) {
-#best-seller .skip-arrow { display: inline-block; animation: bob 1.6s ease-in-out infinite; }
+#best-seller .scroll-down .sd-arrow { display: inline-block; animation: bob 1.6s ease-in-out infinite; }
 }
 
 @keyframes bob {
