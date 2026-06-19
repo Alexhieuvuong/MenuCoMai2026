@@ -9,7 +9,6 @@
   var stage    = section.querySelector('#stage');
   var promoEl  = section.querySelector('.promo');
   var menuEl   = section.querySelector('.menu');
-  var skipBtn  = section.querySelector('.skip-cue');
   var cheBtn   = section.querySelector('.skip-che');
   var root     = document.documentElement;
   if (!scroller || !stage) return;
@@ -95,10 +94,8 @@
       o.el.style.opacity = isRamen ? dishfade : Math.max(0, 1 - e) * dishfade;
     });
 
-    // cross-fade the two pills at the end of the banner: the Mì Cay button hands
-    // off to the Chè button, and only the visible one is tappable.
-    if (skipBtn) skipBtn.style.pointerEvents = cuefade < 0.5 ? 'none' : 'auto';
-    if (cheBtn)  cheBtn.style.pointerEvents  = cuefade < 0.5 ? 'auto' : 'none';
+    // the "Xem Chè" pill is only tappable once the Mì Cay menu has assembled in.
+    if (cheBtn) cheBtn.style.pointerEvents = swap > 0.5 ? 'auto' : 'none';
   }
 
   function onScroll() {
@@ -118,18 +115,8 @@
     requestAnimationFrame(function () { ticking = false; onScroll(); });
   }
 
-  // Skip button → jump to the end of the banner scrub (the Mì Cay menu page).
-  // 'auto' overrides the global scroll-behavior:smooth so we don't fast-replay
-  // the whole animation over the jump.
-  if (skipBtn) {
-    skipBtn.addEventListener('click', function () {
-      var r = scroller.getBoundingClientRect();
-      var y = window.scrollY + r.top + (scroller.offsetHeight - window.innerHeight);
-      window.scrollTo({ top: y, behavior: 'auto' });
-    });
-  }
-
-  // Chè button (shown at the end of the banner) → jump on to the Chè menu.
+  // Chè button (shown once the Mì Cay menu has assembled) → jump on to the Chè menu.
+  // 'auto' overrides the global scroll-behavior:smooth.
   if (cheBtn) {
     cheBtn.addEventListener('click', function () {
       var che = document.getElementById('che');
