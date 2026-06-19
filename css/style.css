@@ -259,7 +259,7 @@ section {
 
 .sidebar-menu a {
     font-family: var(--font-body);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: #636e72;
     position: relative;
@@ -1221,7 +1221,7 @@ body.nav-hidden .sidebar {
         justify-content: center;
     }
     .sidebar-menu a {
-        font-size: 1.15rem;
+        font-size: 1.25rem;
         text-align: center;
         white-space: nowrap;
         padding: 0.3rem 0;
