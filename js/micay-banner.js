@@ -61,10 +61,14 @@
     // 2-page timeline: a quick page-1 assembly that hands off to the finished
     // page-2 (Mì Cay menu + dish) early, which then holds so it can be read and the
     // "Xem Chè" escape used. assemble (0 → 0.40) → promo→menu swap (0.20 → 0.38) →
-    // real-dish reveal (0.40 → 0.60) → page 2 holds (0.60 → 1).
+    // real-dish reveal (0.20 → 0.50): runs THROUGH the assembly so the noodle nest +
+    // broth bowl visibly fade as the ingredients come together, dissolving into the
+    // real dish. It's a perfect crossfade — nest/bowl opacity is (1 − realfade) and
+    // the real dish is realfade, so they always sum to 1 (never an empty bowl).
+    // → page 2 holds (0.50 → 1).
     var cf       = clamp(1 - p / 0.25);
     var swap     = clamp((p - 0.20) / 0.18);
-    var realfade = clamp((p - 0.40) / 0.20);
+    var realfade = clamp((p - 0.20) / 0.30);
     var dishfade = 1 - realfade;
 
     // Offset the cross-fade so the promo and menu headlines don't both bloom at
@@ -117,8 +121,13 @@
         'translate(' + (o.tx * e) + 'px,' + (o.ty * e) + 'px)' +
         ' scale(' + sc + ')' +
         ' rotate(' + (o.tr * e) + 'deg)';
-      var isRamen = o.el.classList.contains('ing-ramen');
-      o.el.style.opacity = isRamen ? dishfade : Math.max(0, 1 - e) * dishfade;
+      // The noodle nest (.ing-ramen) now fades the same way as the other
+      // ingredients — dissolving as it settles into the bowl during assembly —
+      // rather than persisting at full opacity until the reveal. So it visibly
+      // melts away as the dish comes together and is mostly gone before the real
+      // dish gets prominent (no cartoon-noodles-over-real-noodles double image).
+      // The × dishfade factor hands the very last of it to the real dish.
+      o.el.style.opacity = Math.max(0, 1 - e) * dishfade;
     });
 
     // "Xem Chè" is a page-2 control: only tappable once the Mì Cay menu is in,
